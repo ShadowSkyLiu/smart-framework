@@ -44,8 +44,8 @@ public class DispatcherServlet extends HttpServlet {
 
         // 注册处理静态资源的默认 Servlet
         ServletRegistration defaultServlet = servletContext.getServletRegistration("default");
-//        defaultServlet.addMapping(ConfigHelper.getAppAssetPAth());
-        defaultServlet.addMapping(ConfigHelper.getAppAssetPAth() + "*");
+//        defaultServlet.addMapping(ConfigHelper.getAppAssetPath());
+        defaultServlet.addMapping(ConfigHelper.getAppAssetPath() + "*");
     }
 
     @Override
@@ -99,7 +99,7 @@ public class DispatcherServlet extends HttpServlet {
                         for (Map.Entry<String, Object> entry : model.entrySet()) {
                             req.setAttribute(entry.getKey(), entry.getValue());
                         }
-                        req.getRequestDispatcher(ConfigHelper.getAppAssetPAth() + path).forward(req, resp);
+                        req.getRequestDispatcher(ConfigHelper.getAppJspPath() + path).forward(req, resp);
                     }
                 }
             } else if (result instanceof Data) {

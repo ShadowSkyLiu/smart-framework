@@ -123,12 +123,12 @@ public final class ClassUtil {
     }
 
     private static void doAddClass(Set<Class<?>> classSet, String className) {
-        Class<?> cls = loadClass(className);
+        Class<?> cls = loadClass(className, false);
         classSet.add(cls);
     }
 
     public static Class<?> loadClass(String className) {
-        return loadClass(className, false);
+        return loadClass(className, true);
     }
 
 //    public static void main(String[] args) {
