@@ -12,6 +12,7 @@ public final class HelperLoader {
                 ClassHelper.class,
                 BeanHelper.class,
                 IocHelper.class,
+                AopHelper.class,
                 ControllerHelper.class
         };
         for (Class<?> cls: classList) {
